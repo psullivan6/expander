@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Show Hide Widget</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	
+	<p class="expand">Here is the content that shows</p>
+	<div class="open">
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+	</div>
+	
+	<p class="expand">Here is the content that shows</p>
+	<div class="open">
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+	</div>
+	
+	<p class="expand">Here is the content that shows</p>
+	<div class="open">
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+		<p>Here is the content that is expanded</p>
+	</div>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script>
+		
+		$(function() {
+			
+			$('.expand').each(function(k,v){
+				
+				var expandee = $(v).next(),
+				//h = expandee.outerHeight();
+				h = expandee.height();
+				
+				$(this).data('css', {ht : h});
+				
+			});
+			
+			hider($('.expand'), $('.expand').next());
+			
+			function hider(e, f){
+				
+				f.css({
+					'overflow': 'hidden',
+					'height': 0,
+					'margin': 0,
+					'border': 'none',
+					'padding': 0,
+					'opacity': 0
+				});
+				
+			};
+			
+			function shower(e, f){
+				
+				f.css({
+					'overflow': '',
+					'height': e.data('css').ht,
+					'margin': '',
+					'border': '',
+					'padding': '',
+					'opacity': ''
+				});
+				
+			};
+			
+			$('.expand').click(function(){
+				
+				var t = $(this);
+				
+				t.toggleClass('clicked');
+				
+				if (t.hasClass('clicked')){
+					
+					shower(t, t.next());
+					
+				} else{
+					
+					hider(t, t.next());
+					
+				}
+				
+				
+				
+			});
+			
+		});
+		
+	</script>
+	
+</body>
+</html>

@@ -1,16 +1,16 @@
 {
-  "title": "Worf!",
-  "name": "worf",
-  "description": "Nice Legs... for a human.",
+  "title": "Expander",
+  "name": "expander",
+  "description": "An accessible jQuery slideToggler, accordian, or expander ",
   "version": "1.0.0",
-  "homepage": "https://github.com/registerguard/grunt-boiler",
+  "homepage": "https://github.com/psullivan6/expander",
   "repository": {
     "type": "git",
-    "url": "git://github.com/registerguard/grunt-boiler.git"
+    "url": "git://github.com/psullivan6/expander.git"
   },
   "author": {
-    "name": "Micky Hulse",
-    "url": "http://hulse.me"
+    "name": "Patrick Sullivan",
+    "url": "http://psullivan6.com"
   },
   "keywords": [
     "javascript",

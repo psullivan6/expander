@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 				
 				files : [
 					
-					'./src/jquery.<%= pkg.name %>.js',
+					'./src/<%= pkg.name %>.js',
 					'../demo/**/*'
 					
 				],
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
 			init : [
 				
 				'./Gruntfile.js',
-				'./src/jquery.<%= pkg.name %>.js'
+				'./src/<%= pkg.name %>.js'
 				
 			]
 			
@@ -135,7 +135,7 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../<%= pkg.name %>/jquery.<%= pkg.name %>.min.js': ['./src/jquery.<%= pkg.name %>.js']
+					'../<%= pkg.name %>/<%= pkg.name %>.min.js': ['./src/<%= pkg.name %>.js']
 					
 				}
 				
@@ -161,8 +161,8 @@ module.exports = function(grunt) {
 			
 			dist : {
 				
-				src : ['./src/jquery.<%= pkg.name %>.js'],
-				dest : '../<%= pkg.name %>/jquery.<%= pkg.name %>.js'
+				src : ['./src/<%= pkg.name %>.js'],
+				dest : '../<%= pkg.name %>/<%= pkg.name %>.js'
 				
 			}
 			

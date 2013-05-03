@@ -1,16 +1,3 @@
-/**
- * Expander
- * An accessible jQuery slideToggler, accordian, or expander.
- *
- * @author Patrick Sullivan
- * @link http://psullivan6.com
- * @docs https://github.com/psullivan6/expander
- * @copyright Copyright (c) 2013 Patrick Sullivan.
- * @license Released under the Apache License, Version 2.0.
- * @version 1.0.0
- * @date 2013/05/02
- */
-
 (function($, window, document, undefined) {
 	
 	/**

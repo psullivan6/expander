@@ -1,7 +1,11 @@
 {
   "title": "Expander",
   "name": "expander",
+<<<<<<< HEAD
   "description": "An accessible jQuery slideToggler, accordian, or expander ",
+=======
+  "description": "An accessible jQuery slideToggler, accordian, or expander.",
+>>>>>>> origin/gh-pages
   "version": "1.0.0",
   "homepage": "https://github.com/psullivan6/expander",
   "repository": {

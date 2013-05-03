@@ -1,4 +1,55 @@
+<<<<<<< HEAD
 $(function() {
+=======
+(function($, window, document, undefined) {
+	
+	/**
+	 * Function-level strict mode syntax.
+	 *
+	 * @see rgne.ws/XcZgn8
+	 */
+	
+	'use strict';
+	
+	//--------------------------------------------------------------------------
+	//
+	// Local "globals":
+	//
+	//--------------------------------------------------------------------------
+	
+	/**
+	 * Javascript console.
+	 *
+	 * @see rgne.ws/12p2bvl
+	 */
+	
+	var console = window.console || { log : function() {}, warn : function() {} },
+	
+	//----------------------------------
+	
+	/**
+	 * The plugin namespace.
+	 */
+	
+	EXP = 'expander',
+	
+	//--------------------------------------------------------------------------
+	//
+	// Defaults and settings:
+	//
+	//--------------------------------------------------------------------------
+	
+	defaults = {
+		
+		foo : '',
+		bar : '',
+		// ... add more defaults here.
+		
+		onInit      : $.noop, // Callback on plugin initialization; "this" is the context of the current element.
+		onAfterInit : $.noop  // Callback after plugin initialization; IBID.
+		
+	}; // defaults
+>>>>>>> origin/gh-pages
 	
 	$('.expand').each(function(k,v){
 		
@@ -10,8 +61,11 @@ $(function() {
 		
 	});
 	
+<<<<<<< HEAD
 	hider($('.expand'), $('.expand').next());
 	
+=======
+>>>>>>> origin/gh-pages
 	function hider(e, f){
 		
 		f.css({
@@ -23,7 +77,11 @@ $(function() {
 			'opacity': 0
 		});
 		
+<<<<<<< HEAD
 	};
+=======
+	}
+>>>>>>> origin/gh-pages
 	
 	function shower(e, f){
 		
@@ -36,7 +94,13 @@ $(function() {
 			'opacity': ''
 		});
 		
+<<<<<<< HEAD
 	};
+=======
+	}
+	
+	hider($('.expand'), $('.expand').next());
+>>>>>>> origin/gh-pages
 	
 	$('.expand').click(function(){
 		
@@ -64,7 +128,11 @@ $(function() {
 			
 			console.log(document.activeElement, obj);
 			
+<<<<<<< HEAD
 		};
+=======
+		}
+>>>>>>> origin/gh-pages
 		
 	});
 	
@@ -76,6 +144,7 @@ $(function() {
 			
 			console.log('SELECTED');
 			
+<<<<<<< HEAD
 		};
 		
 	});
@@ -112,3 +181,28 @@ $(function() {
 		}
 	
 });
+=======
+		}
+		
+	});
+	
+	$.fn[EXP] = function(method) {
+		
+		if (methods[method]) {
+			
+			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+			
+		} else if ((typeof method == 'object') || ( ! method)) {
+			
+			return methods.init.apply(this, arguments);
+			
+		} else {
+			
+			$.error('jQuery.' + EXP + ' thinks that ' + method + ' doesn\'t exist');
+			
+		}
+		
+	}; // $.fn[EXP]
+	
+}(jQuery, window, document));
+>>>>>>> origin/gh-pages

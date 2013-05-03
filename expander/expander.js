@@ -1,4 +1,64 @@
-$(function() {
+/**
+ * Expander
+ * An accessible jQuery slideToggler, accordian, or expander.
+ *
+ * @author Patrick Sullivan
+ * @link http://psullivan6.com
+ * @docs https://github.com/psullivan6/expander
+ * @copyright Copyright (c) 2013 Patrick Sullivan.
+ * @license Released under the Apache License, Version 2.0.
+ * @version 1.0.0
+ * @date 2013/05/02
+ */
+
+(function($, window, document, undefined) {
+	
+	/**
+	 * Function-level strict mode syntax.
+	 *
+	 * @see rgne.ws/XcZgn8
+	 */
+	
+	'use strict';
+	
+	//--------------------------------------------------------------------------
+	//
+	// Local "globals":
+	//
+	//--------------------------------------------------------------------------
+	
+	/**
+	 * Javascript console.
+	 *
+	 * @see rgne.ws/12p2bvl
+	 */
+	
+	var console = window.console || { log : function() {}, warn : function() {} },
+	
+	//----------------------------------
+	
+	/**
+	 * The plugin namespace.
+	 */
+	
+	EXP = 'expander',
+	
+	//--------------------------------------------------------------------------
+	//
+	// Defaults and settings:
+	//
+	//--------------------------------------------------------------------------
+	
+	defaults = {
+		
+		foo : '',
+		bar : '',
+		// ... add more defaults here.
+		
+		onInit      : $.noop, // Callback on plugin initialization; "this" is the context of the current element.
+		onAfterInit : $.noop  // Callback after plugin initialization; IBID.
+		
+	}; // defaults
 	
 	$('.expand').each(function(k,v){
 		
@@ -9,8 +69,6 @@ $(function() {
 		$(this).data('css', {ht : h});
 		
 	});
-	
-	hider($('.expand'), $('.expand').next());
 	
 	function hider(e, f){
 		
@@ -23,7 +81,7 @@ $(function() {
 			'opacity': 0
 		});
 		
-	};
+	}
 	
 	function shower(e, f){
 		
@@ -36,7 +94,9 @@ $(function() {
 			'opacity': ''
 		});
 		
-	};
+	}
+	
+	hider($('.expand'), $('.expand').next());
 	
 	$('.expand').click(function(){
 		
@@ -64,7 +124,7 @@ $(function() {
 			
 			console.log(document.activeElement, obj);
 			
-		};
+		}
 		
 	});
 	
@@ -76,39 +136,26 @@ $(function() {
 			
 			console.log('SELECTED');
 			
-		};
+		}
 		
 	});
 	
-	
-	
-	
-	
-	
-	
-	
-	
-
-		function GetSelectedText () {
-			var selText = "";
-			if (window.getSelection) {  // all browsers, except IE before version 9
-				if (document.activeElement && (document.activeElement.tagName.toLowerCase () == "textarea" || document.activeElement.tagName.toLowerCase () == "input")) {
-					var text = document.activeElement.value;
-					selText = text.substring (document.activeElement.selectionStart, document.activeElement.selectionEnd);
-				} else {
-					var selRange = window.getSelection ();
-					selText = selRange.toString ();
-				}
-			} else {
-				if (document.selection.createRange) { // Internet Explorer
-					var range = document.selection.createRange ();
-					selText = range.text;
-				}
-			}
+	$.fn[EXP] = function(method) {
+		
+		if (methods[method]) {
 			
-			if (selText !== "") {
-				alert (selText);
-			}
+			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+			
+		} else if ((typeof method == 'object') || ( ! method)) {
+			
+			return methods.init.apply(this, arguments);
+			
+		} else {
+			
+			$.error('jQuery.' + EXP + ' thinks that ' + method + ' doesn\'t exist');
+			
 		}
+		
+	}; // $.fn[EXP]
 	
-});
+}(jQuery, window, document));

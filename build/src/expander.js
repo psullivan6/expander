@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-$(function() {
-=======
 (function($, window, document, undefined) {
 	
 	/**
@@ -49,7 +46,6 @@ $(function() {
 		onAfterInit : $.noop  // Callback after plugin initialization; IBID.
 		
 	}; // defaults
->>>>>>> origin/gh-pages
 	
 	$('.expand').each(function(k,v){
 		
@@ -61,11 +57,6 @@ $(function() {
 		
 	});
 	
-<<<<<<< HEAD
-	hider($('.expand'), $('.expand').next());
-	
-=======
->>>>>>> origin/gh-pages
 	function hider(e, f){
 		
 		f.css({
@@ -77,11 +68,7 @@ $(function() {
 			'opacity': 0
 		});
 		
-<<<<<<< HEAD
-	};
-=======
 	}
->>>>>>> origin/gh-pages
 	
 	function shower(e, f){
 		
@@ -94,13 +81,9 @@ $(function() {
 			'opacity': ''
 		});
 		
-<<<<<<< HEAD
-	};
-=======
 	}
 	
 	hider($('.expand'), $('.expand').next());
->>>>>>> origin/gh-pages
 	
 	$('.expand').click(function(){
 		
@@ -128,11 +111,7 @@ $(function() {
 			
 			console.log(document.activeElement, obj);
 			
-<<<<<<< HEAD
-		};
-=======
 		}
->>>>>>> origin/gh-pages
 		
 	});
 	
@@ -144,44 +123,6 @@ $(function() {
 			
 			console.log('SELECTED');
 			
-<<<<<<< HEAD
-		};
-		
-	});
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-		function GetSelectedText () {
-			var selText = "";
-			if (window.getSelection) {  // all browsers, except IE before version 9
-				if (document.activeElement && (document.activeElement.tagName.toLowerCase () == "textarea" || document.activeElement.tagName.toLowerCase () == "input")) {
-					var text = document.activeElement.value;
-					selText = text.substring (document.activeElement.selectionStart, document.activeElement.selectionEnd);
-				} else {
-					var selRange = window.getSelection ();
-					selText = selRange.toString ();
-				}
-			} else {
-				if (document.selection.createRange) { // Internet Explorer
-					var range = document.selection.createRange ();
-					selText = range.text;
-				}
-			}
-			
-			if (selText !== "") {
-				alert (selText);
-			}
-		}
-	
-});
-=======
 		}
 		
 	});
@@ -205,4 +146,3 @@ $(function() {
 	}; // $.fn[EXP]
 	
 }(jQuery, window, document));
->>>>>>> origin/gh-pages
